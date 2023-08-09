@@ -1,4 +1,4 @@
-function [train,test] = splitData(data)
+function [trData,teData] = splitData(data)
 
 [m,n] = size(data);
 
@@ -7,8 +7,8 @@ function [train,test] = splitData(data)
 indices = randperm(m);
 data = data(indices,:);
 
-train = []; test = [];
+trData = []; teData = [];
 
 nTrain = round(m*0.7);
-train = data(1:nTrain,:);
-test = data(nTrain+1:m,:);
+trData = data(1:nTrain,:);
+teData = data(nTrain+1:m,:);
